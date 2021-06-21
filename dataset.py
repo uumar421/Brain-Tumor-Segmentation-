@@ -36,7 +36,8 @@ class SegmentationDataset(data.Dataset):
         # print(index)
         file_index, path = self.directory[i]
 
-        image_files = path + '/BraTS20_Training_'+string_from_num(file_index)+'_flair.nii.gz', path + '/BraTS20_Training_'+string_from_num(file_index)+'_t1.nii.gz', path+ '/BraTS20_Training_'+string_from_num(file_index)+'_t1ce.nii.gz', path + '/BraTS20_Training_'+string_from_num(file_index)+'_t2.nii.gz'
+        image_files = path + '/BraTS20_Training_'+string_from_num(file_index)+'_flair.nii.gz', path + '/BraTS20_Training_'+string_from_num(file_index) +
+                       '_t1.nii.gz', path+ '/BraTS20_Training_'+string_from_num(file_index)+'_t1ce.nii.gz', path + '/BraTS20_Training_'+string_from_num(file_index)+'_t2.nii.gz'
         label_file = path + '/BraTS20_Training_'+string_from_num(file_index)+'_seg.nii.gz'
 
         x_train = np.array([np.array(nib.load(fname).get_fdata()) for fname in image_files])
