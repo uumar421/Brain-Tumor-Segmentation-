@@ -108,20 +108,15 @@ def train(
             x_train, y_label = x_train.to(device, dtype=torch.float), y_label.to(device, dtype=torch.float)
             optimizer.zero_grad()
             output=model(x_train)
-            # print(output.shape)
-
+           
             d_loss = dice_loss(output, y_label)
-            # ac_loss = active_contour_loss(output, y_label)
-            # f_loss = focal_loss(output, y_label)
             dice_coeff = dice_coefficient(output, y_label)
 
             loss = d_loss
-
             loss.backward()
             optimizer.step()
 
             iter_time = time()-iter_start
-
             loss_np = loss.detach().cpu().numpy()
             dice_np = dice_coeff.detach().cpu().numpy()
 
@@ -131,7 +126,6 @@ def train(
             print(f"Step: Training, Epoch: {epoch}/{n_epochs}, Iteration: {i+1}/{total_iterations} Loss: {loss_np}, Dice: {dice_np}, Time: {iter_time}")
 
             train_measures_per_iteration.append((epoch, i+1, (epoch-1)*len(training_dataloader)+i, loss_np, dice_np, iter_time))
-
             torch.cuda.empty_cache()
 
         lr_scheduler(optimizer, epoch, initial_lr=initial_learning_rate, n_epochs=n_epochs) #do i do epoch+1?
