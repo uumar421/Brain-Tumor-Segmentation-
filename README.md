@@ -1,2 +1,2 @@
 # FYP---Source-Code
-Complete implementation of the segmentation model explained in project report named "Brain Tumor Segmentation using Encoder Decoder based Fully Convolutional Network".
+Implementation of the segmentation model created as part of Final Year Project titled as "Brain Tumor Segmentation using Encoder Decoder based Fully Convolutional Network".
