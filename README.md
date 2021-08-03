@@ -16,6 +16,7 @@ The architecture implemented in this project, originally proposed by Myronenko e
 Regions from 3D MRIs", is illustrated with the help of following figure:
 
 ![image](https://user-images.githubusercontent.com/69485235/128057854-432de3c2-951e-4dba-a7c8-bd6b2748126c.png)
+
 Note: Every input is 5-dimensional. The batch dimension is not shown in the above figure.
 
 # Results
