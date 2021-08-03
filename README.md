@@ -17,3 +17,14 @@ The architecture implemented in this project, originally proposed by Myronenko e
 Regions from 3D MRIs", is illustrated with the help of following figure:
 
 ![image](https://user-images.githubusercontent.com/69485235/128057854-432de3c2-951e-4dba-a7c8-bd6b2748126c.png)
+
+# Results
+The model is trained on Nvidia server platform containing four Nvidia Tesla V100 (32 GBs) GPUs for 300 epochs and the highest average dice score (accuracy) of 0.818 (81.8%) is achieved. 
+
+![image](https://user-images.githubusercontent.com/69485235/128058395-c1152138-71a8-48cd-af00-63e15ef71323.png)
+
+The following figure shows the visualization of the results achieved through the model.
+
+![image](https://user-images.githubusercontent.com/69485235/128058532-eb548305-2c3b-49f5-8894-d4db4c80622d.png)
+
+
