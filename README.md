@@ -10,6 +10,7 @@ The implemented method is an encoder decoder-based fully convolutional network t
   -> Matplotlib
   -> OpenCV
   -> Scikit-image
+  -> Monai
   
 # Architecture
 The architecture implemented in this project, originally proposed by Myronenko et al. in the article titled as "Robust Semantic Segmentation of Brain Tumor
