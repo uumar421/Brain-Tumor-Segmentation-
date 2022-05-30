@@ -33,7 +33,7 @@ def out_conv3d(in_channels, out_channels):
                          nn.Sigmoid()
                         )
 
-def bi_upsample(in_channels, out_channels):
+def tri_upsample(in_channels, out_channels):
     return nn.Sequential(
         nn.Conv3d(in_channels, out_channels, kernel_size=1, bias=True),
         nn.Upsample(scale_factor=2, mode='trilinear', align_corners=True)
@@ -55,11 +55,11 @@ class unet_3d_Model(nn.Module):
         self.EncoderBlock3 = conv3d_block(256,256)
         
         #up_sampling
-        self.DecoderUp2 = bi_upsample(256,128)
+        self.DecoderUp2 = tri_upsample(256,128)
         self.DecoderBlock2 = conv3d_block(256,128)
-        self.DecoderUp1 = bi_upsample(128,64)
+        self.DecoderUp1 = tri_upsample(128,64)
         self.DecoderBlock1 = conv3d_block(128,64)
-        self.DecoderUp0 = bi_upsample(64,32)
+        self.DecoderUp0 = tri_upsample(64,32)
         self.DecoderBlock0 = conv3d_block(64,32)
         
         #output
